@@ -1,4 +1,4 @@
-# StockBot
+# StockBot :chart: 💰
 Discord Bot which gives information about stocks listed in the Indian Stock Exchange
   
 Commands:  
