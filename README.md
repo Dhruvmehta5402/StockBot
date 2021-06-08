@@ -12,5 +12,9 @@ To run this program, you will need to:
 Install ```discord.py ```  
 Install ```bsedata``` library  
 You can do this using:  
-```$pip install discord.py```  
-```$pip install bsedata```  
+```bash
+$ pip install discord.py
+```  
+```bash
+$ pip install bsedata
+```  
