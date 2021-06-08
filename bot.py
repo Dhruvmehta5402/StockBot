@@ -9,22 +9,21 @@ b = BSE(update_codes = True)
 
 bot = commands.Bot(command_prefix='!')
 
-@bot.command(name="test")
+@bot.command(name="bluechip", help="Recommends bluechip investments")
 async def test(ctx):
-    await ctx.send("Test successful")
-    bluechip = ['TCS', 'Infosys', 'Reliance, M&M, Wipro, Bajaj Companies, MRF']
+    bluechip = ['TCS', 'Infosys', 'Reliance', 'M&M', 'Wipro', 'Bajaj Companies', 'MRF', 'Asian Paints']
     recommend = f'Try investing in {random.choice(bluechip)}'
     await ctx.send(recommend)
     await ctx.send("Also check out the some of the Sensex Companies")
 
-@bot.command(name="growth")
+@bot.command(name="growth", help="Recommends growth stocks")
 async def growth(ctx):
     risky = ['Adani Ent', 'Adani Ports', 'Adani Power', 'Alkyl Amine', 'Navin Fluorine', 'Balaji Amines', 'Apollo Hospital', 'Britannia', 'Titan Company', 'HAL']
     recommend = f'Try investing in {random.choice(risky)}'
     await ctx.send(recommend)
-    await ctx.send("Also check out the rest of the Sensex Companies")
+    await ctx.send("Also check out the rest of the Nifty MidCap 100 Companies")
 
-@bot.command(name="returns", help="Enter the bought price then the CMP to get Profit%")
+@bot.command(name="returns", help="Enter the bought price then the CMP to get Profit%. <x>=bought <y>=cmp")
 async def returns(ctx, x, y):
     x = float(x)
     y = float(y)
@@ -32,7 +31,7 @@ async def returns(ctx, x, y):
     percent = (profit / x) * 100
     await ctx.send("Your return on this investment is: " + str(percent) + "%")
 
-@bot.command(name="price", help="Enter the BSE stock code to get the price, change%")
+@bot.command(name="price", help="Enter the BSE stock code to get the price, change%. <code>=stock code")
 async def returns(ctx, code):
     quote = b.getQuote(code)
     current = quote["currentValue"]
